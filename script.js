@@ -10,7 +10,26 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let result = '';
 
+  for (let key in obj) {
+    let [symbol, value] = obj[key];
+
+    while (num >= value) {
+      result += symbol;
+      num -= value;
+    }
+
+}
+	result = result
+    .replace('DCCCC', 'CM') // 900
+    .replace('CCCC', 'CD')   // 400
+    .replace('LXXXX', 'XC')  // 90
+    .replace('XXXX', 'XL')   // 40
+    .replace('VIIII', 'IX')  // 9
+    .replace('IIII', 'IV');  // 4
+
+  return result;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
